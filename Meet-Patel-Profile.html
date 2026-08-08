@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Meet Patel - Senior Software Engineer. React Native and full-stack web. Available for freelance and contract work.">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; }
+  h1, h2, h3, h4, p, ul { margin: 0; }
+  ul { padding: 0; list-style: none; }
+  img { max-width: 100%; }
+</style>
+<title>Meet Patel — Senior Software Engineer</title>
+
+<style>
+  :root {
+    --ground:        #FFFFFF;
+    --ground-alt:    #F5F3EE;
+    --ink:           #16211D;
+    --ink-2:         #4C5A54;
+    --ink-3:         #7C8981;
+    --rule:          #E3E1DA;
+    --rule-2:        #CFCCC3;
+
+    --field:         #123A31;
+    --field-2:       #0D2C25;
+    --field-ink:     #F1ECE1;
+    --field-ink-2:   #A6BCB3;
+    --field-rule:    #2C544A;
+
+    --accent:        #A56A12;
+    --accent-bright: #E0A94B;
+    --accent-soft:   #FAF2E2;
+
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, ui-serif, serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:        #0C100E;
+      --ground-alt:    #141A17;
+      --ink:           #EBEFEB;
+      --ink-2:         #A5B1AB;
+      --ink-3:         #78847E;
+      --rule:          #232B27;
+      --rule-2:        #38423D;
+
+      --field:         #0F2F28;
+      --field-2:       #0A231D;
+      --field-ink:     #EEE8DC;
+      --field-ink-2:   #93A9A0;
+      --field-rule:    #24483F;
+
+      --accent:        #D9A24E;
+      --accent-bright: #E8B65F;
+      --accent-soft:   #2A2216;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:        #0C100E;
+    --ground-alt:    #141A17;
+    --ink:           #EBEFEB;
+    --ink-2:         #A5B1AB;
+    --ink-3:         #78847E;
+    --rule:          #232B27;
+    --rule-2:        #38423D;
+
+    --field:         #0F2F28;
+    --field-2:       #0A231D;
+    --field-ink:     #EEE8DC;
+    --field-ink-2:   #93A9A0;
+    --field-rule:    #24483F;
+
+    --accent:        #D9A24E;
+    --accent-bright: #E8B65F;
+    --accent-soft:   #2A2216;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink-2);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--sans);
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .label {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  a { color: inherit; }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent-bright);
+    outline-offset: 3px;
+  }
+
+  /* ================= HERO ================= */
+
+  .hero {
+    background: var(--field);
+    background-image: linear-gradient(160deg, var(--field) 0%, var(--field-2) 100%);
+    color: var(--field-ink-2);
+    padding: clamp(56px, 9vw, 104px) 0 clamp(48px, 7vw, 80px);
+  }
+
+  .hero .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+  }
+
+  .hero h1 {
+    color: var(--field-ink);
+    font-size: clamp(2.9rem, 9vw, 5.4rem);
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .hero .role {
+    font-size: clamp(1.05rem, 2.6vw, 1.4rem);
+    color: var(--field-ink);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .hero .pitch {
+    font-family: var(--serif);
+    font-size: clamp(1.05rem, 2.1vw, 1.28rem);
+    line-height: 1.62;
+    color: var(--field-ink-2);
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .hero .pitch em {
+    color: var(--field-ink);
+    font-style: normal;
+  }
+
+  .hero-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 26px;
+    padding-top: 10px;
+    border-top: 1px solid var(--field-rule);
+    margin-top: 6px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--field);
+    background: var(--accent-bright);
+    padding: 8px 13px;
+    font-weight: 600;
+  }
+
+  .badge .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--field);
+    flex: none;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+  }
+
+  .hero-links a {
+    color: var(--field-ink-2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--field-rule);
+    padding-bottom: 2px;
+    transition: color .15s, border-color .15s;
+  }
+
+  .hero-links a:hover {
+    color: var(--accent-bright);
+    border-bottom-color: var(--accent-bright);
+  }
+
+  /* ================= STAT BAND ================= */
+
+  .band { background: var(--ground-alt); border-bottom: 1px solid var(--rule); }
+
+  .band .wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+
+  .stat {
+    padding: 34px 32px 34px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .stat:last-child { border-right: 0; }
+  .stat + .stat { padding-left: 32px; }
+
+  .stat .figure {
+    font-size: clamp(2.4rem, 5vw, 3.1rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat .desc { font-size: 0.9rem; color: var(--ink-2); max-width: 26ch; }
+
+  /* ================= SECTIONS ================= */
+
+  .sec { padding: clamp(52px, 7vw, 84px) 0; border-bottom: 1px solid var(--rule); }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 38px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .sec-head h2 {
+    font-size: clamp(1.5rem, 3.4vw, 2rem);
+    margin: 0;
+    flex: 1;
+  }
+
+  /* ---- capabilities ---- */
+
+  .caps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0;
+  }
+
+  .cap {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 0 30px;
+    border-left: 1px solid var(--rule);
+  }
+
+  .cap:first-child { padding-left: 0; border-left: 0; }
+
+  .cap h3 { font-size: 1.18rem; margin: 0; }
+  .cap p { margin: 0; font-size: 0.94rem; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+
+  .chips span {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.03em;
+    color: var(--ink-2);
+    background: var(--ground-alt);
+    border: 1px solid var(--rule);
+    padding: 4px 9px;
+    white-space: nowrap;
+  }
+
+  .addon {
+    margin-top: 40px;
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .addon .label { color: var(--accent); }
+  .addon h3 { font-size: 1.18rem; margin: 0; }
+  .addon p { margin: 0; font-size: 0.94rem; max-width: 62ch; }
+
+  /* ---- projects ---- */
+
+  .projects { display: flex; flex-direction: column; }
+
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 230px;
+    gap: 24px 44px;
+    padding: 36px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .project:first-child { border-top: 0; padding-top: 0; }
+
+  .project-main { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+
+  .project h3 {
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    margin: 0;
+  }
+
+  .project h3 .qualifier {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink-3);
+    letter-spacing: 0;
+    margin-top: 7px;
+  }
+
+  .points { display: flex; flex-direction: column; gap: 9px; max-width: 66ch; }
+
+  .points li { position: relative; padding-left: 19px; font-size: 0.95rem; }
+
+  .points li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0.63em;
+    width: 8px; height: 2px;
+    background: var(--accent);
+  }
+
+  .points strong { color: var(--ink); font-weight: 600; }
+
+  .project-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 6px;
+  }
+
+  .fact { display: flex; flex-direction: column; gap: 4px; }
+  .fact .val { font-size: 0.875rem; color: var(--ink); line-height: 1.45; }
+
+  .link-out {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    background: var(--accent-soft);
+    padding: 8px 12px;
+    align-self: flex-start;
+    transition: background .15s, border-color .15s;
+  }
+
+  .link-out:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+  .link-out .arrow { font-size: 0.9em; }
+
+  .callout {
+    display: flex;
+    align-items: baseline;
+    gap: 13px;
+    background: var(--field);
+    color: var(--field-ink-2);
+    padding: 18px 20px;
+    max-width: 66ch;
+  }
+
+  .callout .figure {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    color: var(--accent-bright);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .callout .txt { font-size: 0.92rem; flex: 1 1 200px; }
+  .callout .txt strong { color: var(--field-ink); font-weight: 600; }
+
+  /* ---- timeline ---- */
+
+  .timeline { display: flex; flex-direction: column; gap: 34px; padding-left: 26px; border-left: 2px solid var(--rule); }
+
+  .job { position: relative; display: flex; flex-direction: column; gap: 9px; }
+
+  .job::before {
+    content: "";
+    position: absolute;
+    left: -33px; top: 7px;
+    width: 12px; height: 12px;
+    background: var(--ground);
+    border: 2px solid var(--rule-2);
+    border-radius: 50%;
+  }
+
+  .job.now::before { background: var(--accent); border-color: var(--accent); }
+
+  .job h3 { font-size: 1.24rem; margin: 0; }
+
+  .job-meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .job-meta .sep { color: var(--rule-2); padding: 0 7px; }
+  .job.now .job-meta { color: var(--accent); }
+
+  /* ---- stack + background ---- */
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px 40px;
+  }
+
+  .group { display: flex; flex-direction: column; gap: 8px; }
+  .group p { margin: 0; font-size: 0.95rem; color: var(--ink); line-height: 1.55; }
+  .group .sub { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-3); }
+
+  /* ================= CTA ================= */
+
+  .cta {
+    background: var(--field);
+    background-image: linear-gradient(200deg, var(--field) 0%, var(--field-2) 100%);
+    color: var(--field-ink-2);
+    padding: clamp(52px, 7vw, 84px) 0;
+  }
+
+  .cta .wrap { display: flex; flex-direction: column; gap: 32px; }
+
+  .cta h2 {
+    color: var(--field-ink);
+    font-size: clamp(1.7rem, 4.2vw, 2.6rem);
+    margin: 0;
+    max-width: 20ch;
+  }
+
+  .cta p { margin: 0; max-width: 60ch; font-size: 1.02rem; }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 24px 30px;
+    padding-top: 26px;
+    border-top: 1px solid var(--field-rule);
+  }
+
+  .cta-grid .label { color: var(--field-ink-2); opacity: .8; }
+  .cta-grid .val { font-size: 0.95rem; color: var(--field-ink); }
+
+  .cta-grid a {
+    color: var(--accent-bright);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent-bright) 40%, transparent);
+  }
+
+  .cta-grid a:hover { border-bottom-color: var(--accent-bright); }
+
+  .colophon {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--field-ink-2);
+    opacity: .55;
+  }
+
+  /* ================= RESPONSIVE ================= */
+
+  @media (max-width: 860px) {
+    .project { grid-template-columns: 1fr; gap: 18px; }
+    .project-aside { flex-direction: row; flex-wrap: wrap; gap: 18px 32px; padding-top: 0; }
+  }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 0 20px; }
+    .cap { padding: 0; border-left: 0; padding-bottom: 26px; }
+    .caps { gap: 4px; }
+    .stat { border-right: 0; border-bottom: 1px solid var(--rule); padding: 26px 0; }
+    .stat + .stat { padding-left: 0; }
+    .stat:last-child { border-bottom: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+
+  @media print {
+    body { background: #FFF; color: #1A1A1A; font-size: 10pt; }
+    .hero, .cta { background: #FFF !important; color: #1A1A1A; padding: 16pt 0; }
+    .hero h1, .hero .role, .hero .pitch, .cta h2, .cta p, .cta-grid .val { color: #123A31; }
+    .callout { background: #F2F0EA; color: #1A1A1A; }
+    .callout .figure, .stat .figure { color: #123A31; }
+    .sec, .project, .job { break-inside: avoid; }
+    .wrap { max-width: none; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Available for freelance &amp; contract work</span>
+
+    <div>
+      <h1>Meet Patel</h1>
+      <p class="role">Senior Software Engineer &middot; React Native &amp; Full-Stack</p>
+    </div>
+
+    <p class="pitch">
+      Six years building production web and mobile products. Currently shipping
+      <em>React Native applications end to end as the sole engineer</em> — previously the developer
+      behind seller-facing systems at AJIO (Reliance). I take work from requirement gathering
+      through architecture, build, review and release, and handle the client conversation in between.
+    </p>
+
+    <div class="hero-foot">
+      <span class="badge"><span class="dot"></span>Open to new projects</span>
+      <div class="hero-links">
+        <a href="mailto:mpmeet130298@gmail.com">mpmeet130298@gmail.com</a>
+        <a href="tel:+918141664429">+91 81416 64429</a>
+        <a href="https://linkedin.com/in/meetpatel1302">linkedin.com/in/meetpatel1302</a>
+        <span>Ahmedabad, IST</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="band">
+  <div class="wrap">
+    <div class="stat">
+      <span class="figure">6+</span>
+      <span class="desc">years shipping production software</span>
+    </div>
+    <div class="stat">
+      <span class="figure">50%</span>
+      <span class="desc">courier cost removed at AJIO (Reliance)</span>
+    </div>
+    <div class="stat">
+      <span class="figure">7</span>
+      <span class="desc">products built across retail, fintech, HR operations and AI</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CAPABILITIES ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What I do</h2>
+      <span class="label">Capabilities</span>
+    </div>
+
+    <div class="caps">
+      <div class="cap">
+        <h3>Mobile applications</h3>
+        <p>
+          Cross-platform apps in React Native and Expo, delivered solo from architecture to
+          release build — state management, push notifications, API integration and store-ready
+          packaging.
+        </p>
+        <div class="chips">
+          <span>React Native</span><span>Expo</span><span>Zustand</span><span>Firebase FCM</span>
+        </div>
+      </div>
+
+      <div class="cap">
+        <h3>Full-stack web</h3>
+        <p>
+          React and Next.js front ends on Node services — dashboards, role-based platforms and
+          vendor portals built to hold up under real commercial traffic.
+        </p>
+        <div class="chips">
+          <span>React</span><span>Next.js</span><span>Node.js</span><span>Redux</span><span>React Query</span><span>REST</span>
+        </div>
+      </div>
+
+      <div class="cap">
+        <h3>Delivery &amp; consulting</h3>
+        <p>
+          Requirement gathering, technical documentation, code review and direct client support.
+          I have consulted inside a Reliance business unit and handled escalations first-hand.
+        </p>
+        <div class="chips">
+          <span>Agile / Scrum</span><span>Code review</span><span>Client comms</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="addon">
+      <span class="label">Additional service</span>
+      <h3>Search engine optimisation</h3>
+      <p>
+        Technical and on-page SEO, available as an add-on alongside build work — so the product
+        ships and gets found, without bringing in a second vendor.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELECTED WORK ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <span class="label">Shipped</span>
+    </div>
+
+    <div class="projects">
+
+      <article class="project">
+        <div class="project-main">
+          <h3>AJIO Seller Central
+            <span class="qualifier">Seller management platform for Reliance Retail</span>
+          </h3>
+          <div class="callout">
+            <span class="figure">50%</span>
+            <span class="txt">reduction in courier cost, from a <strong>dimensional weight-based billing system</strong> I implemented</span>
+          </div>
+          <ul class="points">
+            <li>Acted as <strong>software consultant to AJIO.COM</strong>, translating business process needs into system solutions rather than only taking tickets.</li>
+            <li>Built vendor-facing dashboards giving real-time visibility into <strong>orders, catalogue, returns, inventory and transaction history</strong>.</li>
+            <li>Architected a <strong>role-based CMS</strong> with granular user permissions.</li>
+            <li>Owned client escalations end to end and kept the platform stable under production load.</li>
+          </ul>
+        </div>
+        <aside class="project-aside">
+          <div class="fact"><span class="label">Client</span><span class="val">AJIO — Reliance Retail</span></div>
+          <div class="fact"><span class="label">Stack</span><span class="val">Next.js, React, Node.js, REST</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">Live</span></div>
+        </aside>
+      </article>
+
+      <article class="project">
+        <div class="project-main">
+          <h3>Arthly
+            <span class="qualifier">Personal &amp; family expense tracker — web, Android and iOS</span>
+          </h3>
+          <ul class="points">
+            <li>Cross-platform money management product built for Indian households, covering <strong>UPI, bank accounts, cards, wallets and cash</strong> in a single view.</li>
+            <li><strong>Family sharing</strong> — households share accounts, split and settle shared expenses, and see one combined dashboard rather than tracking separately.</li>
+            <li>Fourteen-plus modules in one app: budgets with overspend alerts, income tracking, recurring transactions, transfers, debts and lending, savings goals, investment tracking (RD, SIP, FD) and reporting.</li>
+            <li>Biometric app lock and minimal-scope Google sign-in, in a deliberately ad-free product.</li>
+          </ul>
+          <a class="link-out" href="https://arthly.webmonks.in/" target="_blank" rel="noopener noreferrer">
+            arthly.webmonks.in <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+        <aside class="project-aside">
+          <div class="fact"><span class="label">Client</span><span class="val">WebMonks Technologies</span></div>
+          <div class="fact"><span class="label">Platforms</span><span class="val">Web, Android &amp; iOS</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">Live</span></div>
+        </aside>
+      </article>
+
+      <article class="project">
+        <div class="project-main">
+          <h3>ODataPro
+            <span class="qualifier">Client work management platform</span>
+          </h3>
+          <ul class="points">
+            <li>Platform for service teams to <strong>plan, assign and record the daily work they deliver for each client</strong>, replacing scattered spreadsheets and chat threads.</li>
+            <li>Gives managers one view of who is working on what, for which client, on any given day.</li>
+            <li>Built the front end and the workflows around daily task capture and client-level reporting.</li>
+          </ul>
+        </div>
+        <aside class="project-aside">
+          <div class="fact"><span class="label">Type</span><span class="val">Internal operations product</span></div>
+          <div class="fact"><span class="label">Stack</span><span class="val">React, Node.js, REST</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">In use</span></div>
+        </aside>
+      </article>
+
+      <article class="project">
+        <div class="project-main">
+          <h3>Nexus
+            <span class="qualifier">Employee management system</span>
+          </h3>
+          <ul class="points">
+            <li>System for managing the <strong>employee lifecycle</strong> — records, roles and day-to-day team administration in one place.</li>
+            <li>Permission-aware interface so HR, managers and staff each see only the part of the system that belongs to them.</li>
+            <li>Built the interface and the data flows connecting employee records to the teams that depend on them.</li>
+          </ul>
+        </div>
+        <aside class="project-aside">
+          <div class="fact"><span class="label">Type</span><span class="val">HR / internal platform</span></div>
+          <div class="fact"><span class="label">Stack</span><span class="val">React, Node.js, REST</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">In use</span></div>
+        </aside>
+      </article>
+
+      <article class="project">
+        <div class="project-main">
+          <h3>SpeechEasy AI
+            <span class="qualifier">AI audio translation tool</span>
+          </h3>
+          <ul class="points">
+            <li>Architected and built an AI-powered tool for accurate audio file translation using NLP and machine learning services.</li>
+            <li>Added <strong>in-app audio recording with automatic upload</strong>, removing the manual file-handling step from the translation flow.</li>
+            <li>Provided technical guidance and mentorship to the delivery team.</li>
+          </ul>
+        </div>
+        <aside class="project-aside">
+          <div class="fact"><span class="label">Type</span><span class="val">AI product</span></div>
+          <div class="fact"><span class="label">Stack</span><span class="val">React, Node.js, NLP / ML APIs</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">Delivered</span></div>
+        </aside>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN DEVELOPMENT ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>In development</h2>
+      <span class="label">Current builds</span>
+    </div>
+
+    <div class="projects">
+
+      <article class="project">
+        <div class="project-main">
+          <h3>Feelify.AI
+            <span class="qualifier">AI wellbeing companion</span>
+          </h3>
+          <ul class="points">
+            <li>The user writes a message; an <strong>AI layer reads the mood behind it</strong> and responds with analysis and tailored suggestions.</li>
+            <li>Conversational mobile interface built solo in React Native, with the AI service integrated behind the chat flow.</li>
+          </ul>
+        </div>
+        <aside class="project-aside">
+          <div class="fact"><span class="label">Role</span><span class="val">Sole engineer</span></div>
+          <div class="fact"><span class="label">Stack</span><span class="val">React Native, Expo, Zustand</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">In development</span></div>
+        </aside>
+      </article>
+
+      <article class="project">
+        <div class="project-main">
+          <h3>Site visit data capture
+            <span class="qualifier">Client product under NDA</span>
+          </h3>
+          <ul class="points">
+            <li>Field app for teams running site visits: staff complete structured forms on location, with the <strong>form set changing according to the type of event</strong> being recorded.</li>
+            <li>Handles a large volume of forms across multiple event types, keeping data entry on a small screen fast and error-resistant.</li>
+            <li>Full application architecture and state layer built solo, with Firebase Cloud Messaging for cross-platform push.</li>
+          </ul>
+        </div>
+        <aside class="project-aside">
+          <div class="fact"><span class="label">Role</span><span class="val">Sole engineer</span></div>
+          <div class="fact"><span class="label">Stack</span><span class="val">React Native, Expo, Zustand, Firebase</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">In development</span></div>
+        </aside>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Experience</h2>
+      <span class="label">2020 — now</span>
+    </div>
+
+    <div class="timeline">
+
+      <article class="job now">
+        <div class="job-meta">Aug 2025 — Present<span class="sep">/</span>Ahmedabad</div>
+        <h3>Senior Software Engineer &middot; Infrassist Technologies</h3>
+        <ul class="points">
+          <li>Brought back to Infrassist after three years at OpenXcell, now leading <strong>React Native mobile delivery</strong>.</li>
+          <li>Sole engineer on cross-platform applications — architecture, state management, notifications and release builds.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-meta">Jul 2022 — Jul 2025<span class="sep">/</span>Ahmedabad</div>
+        <h3>Sr. Software Engineer &middot; OpenXcell Technolabs</h3>
+        <ul class="points">
+          <li>Software consultant for <strong>AJIO.COM (Reliance)</strong>, evaluating business process needs and delivering tailored system solutions.</li>
+          <li>Architected a role-based CMS and built production features in Next.js.</li>
+          <li>Handled client escalations and in-depth support directly.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-meta">Jun 2020 — Jul 2022<span class="sep">/</span>Ahmedabad</div>
+        <h3>Software Engineer &middot; Infrassist Technologies</h3>
+        <ul class="points">
+          <li>Delivered complete features to client specification across multiple concurrent projects.</li>
+          <li>Ran code reviews to hold code quality to industry best practice.</li>
+          <li>Owned integration, collaboration and client support for ongoing product work.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Stack</h2>
+      <span class="label">Tools &amp; practice</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="group">
+        <span class="label">Mobile</span>
+        <p>React Native, Expo, Zustand, Firebase Cloud Messaging, release builds</p>
+      </div>
+      <div class="group">
+        <span class="label">Web</span>
+        <p>React, Next.js, Node.js, JavaScript, Redux, React Query, REST APIs, HTML, CSS, Material UI</p>
+      </div>
+      <div class="group">
+        <span class="label">Practice</span>
+        <p>SDLC, requirement gathering &amp; analysis, technical documentation, code review, Agile &amp; Scrum</p>
+      </div>
+      <div class="group">
+        <span class="label">Tooling</span>
+        <p>Git, GitHub</p>
+      </div>
+      <div class="group">
+        <span class="label">Marketing</span>
+        <p>Search engine optimisation — technical &amp; on-page</p>
+      </div>
+      <div class="group">
+        <span class="label">Education</span>
+        <p>B.E. Information Technology<br><span class="sub">Charusat University · 2015–2019 · CGPA 8.15</span></p>
+      </div>
+      <div class="group">
+        <span class="label">Languages</span>
+        <p>English, Hindi, Gujarati<br><span class="sub">full professional proficiency</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<footer class="cta">
+  <div class="wrap">
+    <h2>Tell me the scope. I'll come back with an approach.</h2>
+    <p>
+      Happy to walk through any of the projects above on a call, including the two builds still in
+      development. Availability, timeline and terms are best worked out directly — send me the
+      brief and I'll tell you honestly whether I'm the right fit.
+    </p>
+
+    <div class="cta-grid">
+      <div class="fact">
+        <span class="label">Email</span>
+        <span class="val"><a href="mailto:mpmeet130298@gmail.com">mpmeet130298@gmail.com</a></span>
+      </div>
+      <div class="fact">
+        <span class="label">Phone / WhatsApp</span>
+        <span class="val"><a href="tel:+918141664429">+91 81416 64429</a></span>
+      </div>
+      <div class="fact">
+        <span class="label">LinkedIn</span>
+        <span class="val"><a href="https://linkedin.com/in/meetpatel1302">/in/meetpatel1302</a></span>
+      </div>
+      <div class="fact">
+        <span class="label">Availability &amp; rate</span>
+        <span class="val">Discussed directly</span>
+      </div>
+    </div>
+
+    <span class="colophon">Meet Patel — Senior Software Engineer — Ahmedabad, India</span>
+  </div>
+</footer>
+</body>
+</html>
