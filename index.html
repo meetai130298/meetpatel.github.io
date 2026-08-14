@@ -520,15 +520,33 @@
   @media (max-width: 860px) {
     .project { grid-template-columns: 1fr; gap: 18px; }
     .project-aside { flex-direction: row; flex-wrap: wrap; gap: 18px 32px; padding-top: 0; }
+
+    /* Hero: collapse to single column, show photo as circle */
+    .hero-layout { grid-template-columns: 1fr; gap: 20px; }
+    .hero-photo { display: block; order: -1; }
+    .hero-photo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-position: center 15%;
+    }
+
+    /* Carousel: pull in the track so arrow buttons stay inside the page */
+    .carousel { padding: 0 26px; }
+    .carousel-prev { left: 0; }
+    .carousel-next { right: 0; }
+    .carousel-track img { height: 130px; }
+    .carousel--mobile .carousel-track img { height: 250px; }
   }
 
   @media (max-width: 720px) {
-    .wrap { padding: 0 20px; }
+    .wrap { padding: 0 16px; }
     .cap { padding: 0; border-left: 0; padding-bottom: 26px; }
     .caps { gap: 4px; }
     .stat { border-right: 0; border-bottom: 1px solid var(--rule); padding: 26px 0; }
     .stat + .stat { padding-left: 0; }
     .stat:last-child { border-bottom: 0; }
+    .hero-links { gap: 6px 16px; font-size: 0.75rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -560,10 +578,6 @@
     display: block;
   }
 
-  @media (max-width: 860px) {
-    .hero-layout { grid-template-columns: 1fr; }
-    .hero-photo { display: none; }
-  }
 
   /* ================= PROJECT SCREENSHOT CAROUSEL ================= */
 
@@ -575,9 +589,10 @@
   .carousel-track {
     display: flex;
     gap: 10px;
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    -ms-overflow-style: none;
     padding: 2px 0;
   }
 
