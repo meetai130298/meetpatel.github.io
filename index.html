@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Meet Patel - Senior Software Engineer. React Native and full-stack web. Available for freelance and contract work.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://meetpatel.github.io/">
+<meta property="og:title" content="Meet Patel — Senior Software Engineer">
+<meta property="og:description" content="Six years building production web and mobile products. React Native, Next.js and full-stack. Available for freelance and contract work.">
+<meta property="og:image" content="https://meetpatel.github.io/assets/meet.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meet Patel — Senior Software Engineer">
+<meta name="twitter:description" content="Six years building production web and mobile products. React Native, Next.js and full-stack. Available for freelance and contract work.">
+<meta name="twitter:image" content="https://meetpatel.github.io/assets/meet.jpg">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -130,9 +139,7 @@
   }
 
   .hero .wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+    display: block;
   }
 
   .eyebrow {
@@ -528,6 +535,102 @@
     * { transition: none !important; animation: none !important; }
   }
 
+  /* ================= HERO LAYOUT WITH PHOTO ================= */
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .hero-photo img {
+    width: 160px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 6px;
+    border: 2px solid var(--field-rule);
+    display: block;
+  }
+
+  @media (max-width: 860px) {
+    .hero-layout { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+  }
+
+  /* ================= PROJECT SCREENSHOT CAROUSEL ================= */
+
+  .carousel {
+    position: relative;
+    margin-top: 12px;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 10px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 2px 0;
+  }
+
+  .carousel-track::-webkit-scrollbar { display: none; }
+
+  .carousel-track img {
+    height: 168px;
+    width: auto;
+    border: 1px solid var(--rule);
+    flex-shrink: 0;
+    border-radius: 3px;
+    display: block;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent-bright);
+    color: var(--field-2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,.18), 0 1px 3px rgba(0,0,0,.12);
+    transition: background .18s, box-shadow .18s, transform .18s;
+  }
+
+  .carousel-btn:hover {
+    background: var(--accent);
+    box-shadow: 0 4px 18px rgba(0,0,0,.22);
+    transform: translateY(-50%) scale(1.12);
+  }
+
+  .carousel-btn svg {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .carousel--mobile .carousel-track img {
+    height: 320px;
+    width: auto;
+    border-radius: 10px;
+  }
+
+  .carousel-prev { left: -19px; }
+  .carousel-next { right: -19px; }
+
   @media print {
     body { background: #FFF; color: #1A1A1A; font-size: 10pt; }
     .hero, .cta { background: #FFF !important; color: #1A1A1A; padding: 16pt 0; }
@@ -542,27 +645,36 @@
 <body>
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">Available for freelance &amp; contract work</span>
+    <div class="hero-layout">
+      <div class="hero-content">
+        <span class="eyebrow">Available for freelance &amp; contract work</span>
 
-    <div>
-      <h1>Meet Patel</h1>
-      <p class="role">Senior Software Engineer &middot; React Native &amp; Full-Stack</p>
-    </div>
+        <div>
+          <h1>Meet Patel</h1>
+          <p class="role">Senior Software Engineer &middot; React Native &amp; Full-Stack</p>
+        </div>
 
-    <p class="pitch">
-      Six years building production web and mobile products. Currently shipping
-      <em>React Native applications end to end as the sole engineer</em> — previously the developer
-      behind seller-facing systems at AJIO (Reliance). I take work from requirement gathering
-      through architecture, build, review and release, and handle the client conversation in between.
-    </p>
+        <p class="pitch">
+          Six years building production web and mobile products. Currently shipping
+          <em>React Native applications end to end as the sole engineer</em> — previously the developer
+          behind seller-facing systems at AJIO (Reliance). I take work from requirement gathering
+          through architecture, build, review and release, and handle the client conversation in between.
+        </p>
 
-    <div class="hero-foot">
-      <span class="badge"><span class="dot"></span>Open to new projects</span>
-      <div class="hero-links">
-        <a href="mailto:mpmeet130298@gmail.com">mpmeet130298@gmail.com</a>
-        <a href="tel:+918141664429">+91 81416 64429</a>
-        <a href="https://linkedin.com/in/meetpatel1302">linkedin.com/in/meetpatel1302</a>
-        <span>Ahmedabad, IST</span>
+        <div class="hero-foot">
+          <span class="badge"><span class="dot"></span>Open to new projects</span>
+          <div class="hero-links">
+            <a href="mailto:mpmeet130298@gmail.com">mpmeet130298@gmail.com</a>
+            <a href="tel:+918141664429">+91 81416 64429</a>
+            <a href="https://linkedin.com/in/meetpatel1302">linkedin.com/in/meetpatel1302</a>
+            <a href="https://github.com/meetpatel1302">github.com/meetpatel1302</a>
+            <span>Ahmedabad, IST</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="assets/meet.jpg" alt="Meet Patel">
       </div>
     </div>
   </div>
@@ -665,6 +777,9 @@
             <li>Architected a <strong>role-based CMS</strong> with granular user permissions.</li>
             <li>Owned client escalations end to end and kept the platform stable under production load.</li>
           </ul>
+          <a class="link-out" href="https://seller.ajio.com/ajiocommerce/" target="_blank" rel="noopener noreferrer">
+            seller.ajio.com <span class="arrow">&rarr;</span>
+          </a>
         </div>
         <aside class="project-aside">
           <div class="fact"><span class="label">Client</span><span class="val">AJIO — Reliance Retail</span></div>
@@ -687,6 +802,31 @@
           <a class="link-out" href="https://arthly.webmonks.in/" target="_blank" rel="noopener noreferrer">
             arthly.webmonks.in <span class="arrow">&rarr;</span>
           </a>
+          <div class="carousel carousel--mobile">
+            <button class="carousel-btn carousel-prev" aria-label="Previous">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-track">
+              <img src="assets/arthly-home.jpg" alt="Arthly home dashboard">
+              <img src="assets/arthly-transactions.jpg" alt="Arthly transactions">
+              <img src="assets/arthly-analytics.jpg" alt="Arthly analytics overview">
+              <img src="assets/arthly-analytics-yearly.jpg" alt="Arthly yearly analytics">
+              <img src="assets/arthly-budgets.jpg" alt="Arthly budgets">
+              <img src="assets/arthly-goals.jpg" alt="Arthly financial goals">
+              <img src="assets/arthly-investments.jpg" alt="Arthly investments">
+              <img src="assets/arthly-debts.jpg" alt="Arthly debts and lending">
+              <img src="assets/arthly-recurring.jpg" alt="Arthly recurring transactions">
+              <img src="assets/arthly-accounts.jpg" alt="Arthly payment accounts">
+              <img src="assets/arthly-family-dashboard.jpg" alt="Arthly family dashboard">
+              <img src="assets/arthly-family-view.jpg" alt="Arthly family sharing">
+              <img src="assets/arthly-family-setup.jpg" alt="Arthly family setup">
+              <img src="assets/arthly-finance-menu.jpg" alt="Arthly finance management">
+              <img src="assets/arthly-settings.jpg" alt="Arthly settings">
+            </div>
+            <button class="carousel-btn carousel-next" aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
         </div>
         <aside class="project-aside">
           <div class="fact"><span class="label">Client</span><span class="val">WebMonks Technologies</span></div>
@@ -698,36 +838,72 @@
       <article class="project">
         <div class="project-main">
           <h3>ODataPro
-            <span class="qualifier">Client work management platform</span>
+            <span class="qualifier">Field service management platform — property sector</span>
           </h3>
           <ul class="points">
-            <li>Platform for service teams to <strong>plan, assign and record the daily work they deliver for each client</strong>, replacing scattered spreadsheets and chat threads.</li>
-            <li>Gives managers one view of who is working on what, for which client, on any given day.</li>
-            <li>Built the front end and the workflows around daily task capture and client-level reporting.</li>
+            <li>Enterprise platform handling <strong>1,700+ jobs a month</strong> across multiple contracts, regions and job types for a UK property performance specialist.</li>
+            <li>Built an operative <strong>planner with AM / PM / EVE shift scheduling</strong> and a real-time monitoring dashboard tracking live job status across all field teams.</li>
+            <li>End-to-end contract lifecycle: contracts (with SOR, priorities and department breakdown), property records, quotations, job orders and call confirmation in one system.</li>
+            <li>Full invoicing module with <strong>line-item cost breakdown and job-level billing</strong>, plus subcontractor management, complaints, timesheets, customer feedback and callout rota.</li>
+            <li>Built the front end, data flows and module architecture across the entire platform.</li>
           </ul>
+          <div class="carousel">
+            <button class="carousel-btn carousel-prev" aria-label="Previous">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-track">
+              <img src="assets/odatapro-dashboard.png" alt="ODataPro dashboard — job metrics">
+              <img src="assets/odatapro-planner.png" alt="ODataPro operative planner">
+              <img src="assets/odatapro-monitoring.png" alt="ODataPro monitoring dashboard">
+              <img src="assets/odatapro-contracts.png" alt="ODataPro contracts list">
+              <img src="assets/odatapro-contract-detail.png" alt="ODataPro contract detail">
+              <img src="assets/odatapro-invoice.png" alt="ODataPro invoice">
+            </div>
+            <button class="carousel-btn carousel-next" aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
         </div>
         <aside class="project-aside">
-          <div class="fact"><span class="label">Type</span><span class="val">Internal operations product</span></div>
+          <div class="fact"><span class="label">Client</span><span class="val">Oakray — Property Performance Specialist (UK)</span></div>
           <div class="fact"><span class="label">Stack</span><span class="val">React, Node.js, REST</span></div>
-          <div class="fact"><span class="label">Status</span><span class="val">In use</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">Live &amp; in use</span></div>
         </aside>
       </article>
 
       <article class="project">
         <div class="project-main">
           <h3>Nexus
-            <span class="qualifier">Employee management system</span>
+            <span class="qualifier">HR &amp; people management platform</span>
           </h3>
           <ul class="points">
-            <li>System for managing the <strong>employee lifecycle</strong> — records, roles and day-to-day team administration in one place.</li>
-            <li>Permission-aware interface so HR, managers and staff each see only the part of the system that belongs to them.</li>
-            <li>Built the interface and the data flows connecting employee records to the teams that depend on them.</li>
+            <li>Full-featured HR platform covering <strong>employee self-service, leave management and absence insights</strong> — a company-wide calendar showing absence patterns across all departments and the full year at a glance.</li>
+            <li><strong>Authorisation workflows</strong> for leave requests, with managers approving or declining directly in-app and staff seeing real-time leave balance and public holiday calendars.</li>
+            <li><strong>Peer recognition system</strong> — staff nominate colleagues for typed badges (Team Player, Hard Worker, Knowledgeable, Efficient, Customer Champion) with personalised messages and a company-wide activity feed.</li>
+            <li>News feed for company announcements and a <strong>document hub</strong> storing HR policies and forms in structured departmental folders.</li>
+            <li>Role-based interface: HR, managers and employees each see only the modules relevant to them.</li>
           </ul>
+          <div class="carousel">
+            <button class="carousel-btn carousel-prev" aria-label="Previous">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-track">
+              <img src="assets/nexus-dashboard.png" alt="Nexus HR dashboard">
+              <img src="assets/nexus-absence.png" alt="Nexus absence insights calendar">
+              <img src="assets/nexus-thanks.png" alt="Nexus peer recognition — Thanks">
+              <img src="assets/nexus-newsfeed.png" alt="Nexus news feed">
+              <img src="assets/nexus-me.png" alt="Nexus personal planner">
+              <img src="assets/nexus-documents.png" alt="Nexus company documents">
+            </div>
+            <button class="carousel-btn carousel-next" aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
         </div>
         <aside class="project-aside">
-          <div class="fact"><span class="label">Type</span><span class="val">HR / internal platform</span></div>
+          <div class="fact"><span class="label">Client</span><span class="val">Oakray — Property Performance Specialist (UK)</span></div>
           <div class="fact"><span class="label">Stack</span><span class="val">React, Node.js, REST</span></div>
-          <div class="fact"><span class="label">Status</span><span class="val">In use</span></div>
+          <div class="fact"><span class="label">Status</span><span class="val">Live &amp; in use</span></div>
         </aside>
       </article>
 
@@ -910,6 +1086,10 @@
         <span class="val"><a href="https://linkedin.com/in/meetpatel1302">/in/meetpatel1302</a></span>
       </div>
       <div class="fact">
+        <span class="label">GitHub</span>
+        <span class="val"><a href="https://github.com/meetpatel1302">github.com/meetpatel1302</a></span>
+      </div>
+      <div class="fact">
         <span class="label">Availability &amp; rate</span>
         <span class="val">Discussed directly</span>
       </div>
@@ -918,5 +1098,19 @@
     <span class="colophon">Meet Patel — Senior Software Engineer — Ahmedabad, India</span>
   </div>
 </footer>
+<script>
+  document.querySelectorAll('.carousel').forEach(function(carousel) {
+    var track = carousel.querySelector('.carousel-track');
+    var prev  = carousel.querySelector('.carousel-prev');
+    var next  = carousel.querySelector('.carousel-next');
+
+    next.addEventListener('click', function() {
+      track.scrollBy({ left: 340, behavior: 'smooth' });
+    });
+    prev.addEventListener('click', function() {
+      track.scrollBy({ left: -340, behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
