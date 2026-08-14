@@ -521,14 +521,18 @@
     .project { grid-template-columns: 1fr; gap: 18px; }
     .project-aside { flex-direction: row; flex-wrap: wrap; gap: 18px 32px; padding-top: 0; }
 
-    /* Hero: collapse to single column, show photo as circle */
-    .hero-layout { grid-template-columns: 1fr; gap: 20px; }
-    .hero-photo { display: block; order: -1; }
-    .hero-photo img {
-      width: 80px;
-      height: 80px;
+    /* Hero: single column, big portrait hidden, avatar shown inline with name */
+    .hero-layout { grid-template-columns: 1fr; gap: 24px; }
+    .hero-photo { display: none; }
+    .hero-avatar {
+      display: block;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
+      object-fit: cover;
       object-position: center 15%;
+      border: 2px solid var(--field-rule);
+      flex-shrink: 0;
     }
 
     /* Carousel: pull in the track so arrow buttons stay inside the page */
@@ -566,6 +570,17 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
+  }
+
+  /* Avatar: only visible on mobile — hidden on desktop */
+  .hero-identity {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .hero-avatar {
+    display: none;
   }
 
   .hero-photo img {
@@ -664,9 +679,12 @@
       <div class="hero-content">
         <span class="eyebrow">Available for freelance &amp; contract work</span>
 
-        <div>
-          <h1>Meet Patel</h1>
-          <p class="role">Senior Software Engineer &middot; React Native &amp; Full-Stack</p>
+        <div class="hero-identity">
+          <img src="assets/meet.jpg" class="hero-avatar" alt="Meet Patel">
+          <div>
+            <h1>Meet Patel</h1>
+            <p class="role">Senior Software Engineer &middot; React Native &amp; Full-Stack</p>
+          </div>
         </div>
 
         <p class="pitch">
