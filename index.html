@@ -521,10 +521,12 @@
     .project { grid-template-columns: 1fr; gap: 18px; }
     .project-aside { flex-direction: row; flex-wrap: wrap; gap: 18px 32px; padding-top: 0; }
 
-    /* Hero: single column, both photo versions hidden on mobile */
-    .hero-layout { grid-template-columns: 1fr; gap: 24px; }
+    /* Hero: drop grid entirely, full-width flex column */
+    .hero-layout { display: flex; flex-direction: column; gap: 24px; width: 100%; }
     .hero-photo { display: none; }
     .hero-avatar { display: none; }
+    .hero-content { width: 100%; }
+    .hero .pitch { max-width: 100%; }
 
     /* Carousel: pull in the track so arrow buttons stay inside the page */
     .carousel { padding: 0 26px; }
