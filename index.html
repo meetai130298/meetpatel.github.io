@@ -521,19 +521,10 @@
     .project { grid-template-columns: 1fr; gap: 18px; }
     .project-aside { flex-direction: row; flex-wrap: wrap; gap: 18px 32px; padding-top: 0; }
 
-    /* Hero: single column, big portrait hidden, avatar shown inline with name */
+    /* Hero: single column, both photo versions hidden on mobile */
     .hero-layout { grid-template-columns: 1fr; gap: 24px; }
     .hero-photo { display: none; }
-    .hero-avatar {
-      display: block;
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 15%;
-      border: 2px solid var(--field-rule);
-      flex-shrink: 0;
-    }
+    .hero-avatar { display: none; }
 
     /* Carousel: pull in the track so arrow buttons stay inside the page */
     .carousel { padding: 0 26px; }
